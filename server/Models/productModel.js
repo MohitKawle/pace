@@ -1,8 +1,13 @@
-const mongoose=require("mongoose")
-const productSchema=mongoose.Schema({ 
-        Phone_number:Number,  
-    })
-const ProductModel=mongoose.model("products",productSchema)
+const mongoose =  require("mongoose")
 
+const productSchema = new mongoose.Schema({
+    Heading : {type:String, required : true},
+    Image : {type: String, required : true},
+    userId : {type: String, required : true}
+})
 
-module.exports={ProductModel}
+const ProductsModel = mongoose.model("product", productSchema)
+
+module.exports = {
+    ProductsModel
+}
